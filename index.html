@@ -3,46 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Repositório Wesley</title>
+<title>Repositório & Projetos - Wesley</title>
 
 <style>
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BASE */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #0d1117;
     color: #e6edf3;
 }
 
-/* HEADER */
-header {
+/* ========================= */
+/* HEADER REPOSITÓRIO */
+/* ========================= */
+
+header.repo-header {
     padding: 30px;
     text-align: center;
     border-bottom: 1px solid #30363d;
 }
 
-header h1 {
+.repo-header h1 {
     font-size: 2.5rem;
     color: #58a6ff;
 }
 
-header p {
+.repo-header p {
     color: #8b949e;
     margin-top: 8px;
 }
 
-/* CONTAINER */
+/* ========================= */
+/* REPOSITÓRIO */
+/* ========================= */
+
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* CATEGORIAS */
 .category {
     margin-bottom: 50px;
 }
@@ -54,7 +62,6 @@ header p {
     padding-left: 10px;
 }
 
-/* LISTA */
 .repo-list {
     list-style: none;
 }
@@ -95,19 +102,113 @@ header p {
     text-decoration: underline;
 }
 
+/* ========================= */
+/* DIVISOR */
+/* ========================= */
+
+.section-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #58a6ff, transparent);
+    margin: 60px auto;
+    width: 80%;
+}
+
+/* ========================= */
+/* PORTFÓLIO */
+/* ========================= */
+
+.portfolio-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px 80px;
+}
+
+.portfolio-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.portfolio-title h2 {
+    font-size: 2rem;
+    color: #58a6ff;
+}
+
+.portfolio-title p {
+    color: #8b949e;
+    margin-top: 8px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.project-btn {
+    display: block;
+    padding: 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    background: #161b22;
+    border: 1px solid #30363d;
+    transition: 0.3s ease;
+    color: #e6edf3;
+}
+
+.project-btn:hover {
+    background: #1f2937;
+    transform: translateY(-5px);
+    border-color: #58a6ff;
+}
+
+.project-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #58a6ff;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+.project-meta {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: #8b949e;
+}
+
 /* FOOTER */
+
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     border-top: 1px solid #30363d;
     color: #8b949e;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- ========================= -->
+<!-- REPOSITÓRIO -->
+<!-- ========================= -->
+
+<header class="repo-header">
     <h1>📦 Repositório Wesley</h1>
     <p>Catálogo oficial dos meus projetos</p>
 </header>
@@ -140,8 +241,49 @@ footer {
 
 </div>
 
+<div class="section-divider"></div>
+
+<!-- ========================= -->
+<!-- PORTFÓLIO -->
+<!-- ========================= -->
+
+<div class="portfolio-wrapper">
+
+    <div class="portfolio-title">
+        <h2>🚀 Central de Projetos</h2>
+        <p>Todos os meus projetos publicados</p>
+    </div>
+
+    <div class="grid">
+
+        <!-- Variáveis JS -->
+        <a class="project-btn" href="https://salivamolhada.github.io/variaveis.js/variaveis.js" target="_blank">
+            <div class="project-name">🧠 Variáveis em JavaScript</div>
+            <div class="project-desc">
+                Página demonstrando o uso de variáveis em JavaScript.
+            </div>
+            <div class="project-meta">
+                Estudos • JavaScript
+            </div>
+        </a>
+
+        <!-- Novo Botão -->
+        <a class="project-btn" href="https://salivamolhada.github.io/variaveis.js/variaveis.js" target="_blank">
+            <div class="project-name">📄 Exemplo de Variáveis</div>
+            <div class="project-desc">
+                Clique para visualizar um exemplo prático de variáveis em JavaScript.
+            </div>
+            <div class="project-meta">
+                Link direto • JavaScript
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
 <footer>
-    © 2026 - Wesley Roberto
+    © 2026 - Wesley Roberto • Front-end em evolução 🚀
 </footer>
 
 <!-- JS DO SEU REPOSITÓRIO -->
