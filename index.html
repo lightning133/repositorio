@@ -112,6 +112,40 @@ header p {
     background: #2ea043;
 }
 
+/* TESTE SORT */
+.sort-box {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+}
+
+.sort-box input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 6px;
+    border: none;
+    margin-right: 10px;
+}
+
+.sort-box button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #238636;
+    color: white;
+    cursor: pointer;
+}
+
+.sort-box button:hover {
+    background: #2ea043;
+}
+
+.result {
+    margin-top: 15px;
+    color: #58a6ff;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -155,7 +189,6 @@ footer {
         </ul>
     </section>
 
-    <!-- NOVA SEÇÃO -->
     <section class="category">
         <h2>🎮 Projetos Especiais</h2>
         <ul class="repo-list">
@@ -169,14 +202,46 @@ footer {
         </ul>
     </section>
 
+    <!-- NOVA PARTE COM SELECTION SORT -->
+    <section class="category">
+        <h2>🧠 Teste de Ordenação (Selection Sort)</h2>
+        <div class="sort-box">
+            <input type="text" id="arrayInput" placeholder="Ex: 5,3,8,1,2">
+            <button onclick="ordenar()">Ordenar</button>
+            <div class="result" id="resultado"></div>
+        </div>
+    </section>
+
 </div>
 
 <footer>
     © 2026 - Wesley Roberto
 </footer>
 
-<!-- JS DO SEU REPOSITÓRIO -->
-<script src="https://cdn.jsdelivr.net/gh/lightning133/inicio-backend@main/main.js"></script>
+<script>
+// SELECTION SORT
+function selectionSort(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        let min = i;
+        for(let j = i + 1; j < arr.length; j++) {
+            if(arr[j] < arr[min]) min = j;
+        }
+        [arr[i], arr[min]] = [arr[min], arr[i]];
+    }
+    return arr;
+}
+
+// FUNÇÃO PARA PEGAR INPUT E MOSTRAR RESULTADO
+function ordenar() {
+    let input = document.getElementById("arrayInput").value;
+    let array = input.split(",").map(Number);
+
+    let ordenado = selectionSort(array);
+
+    document.getElementById("resultado").innerText =
+        "Resultado: " + ordenado.join(", ");
+}
+</script>
 
 </body>
 </html>
