@@ -18,7 +18,6 @@ body {
     color: #e6edf3;
 }
 
-/* HEADER */
 header {
     padding: 30px;
     text-align: center;
@@ -35,14 +34,12 @@ header p {
     margin-top: 8px;
 }
 
-/* CONTAINER */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* CATEGORIAS */
 .category {
     margin-bottom: 50px;
 }
@@ -54,7 +51,6 @@ header p {
     padding-left: 10px;
 }
 
-/* LISTA */
 .repo-list {
     list-style: none;
 }
@@ -64,7 +60,7 @@ header p {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 15px;
-    transition: 0.3s ease;
+    transition: 0.3s;
     border: 1px solid #30363d;
 }
 
@@ -75,27 +71,26 @@ header p {
 
 .repo-item h3 {
     color: #58a6ff;
-    margin-bottom: 5px;
-}
-
-.repo-item p {
-    color: #8b949e;
-    font-size: 0.95rem;
+    margin-bottom: 10px;
 }
 
 .repo-item a {
-    text-decoration: none;
+    display: block;
     color: #238636;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
+    text-decoration: none;
+    margin: 4px 0;
 }
 
 .repo-item a:hover {
     text-decoration: underline;
 }
 
-/* BOTÃO DESTACADO */
+.repo-item img {
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
 .highlight-btn {
     display: inline-block;
     margin-top: 10px;
@@ -105,14 +100,12 @@ header p {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .highlight-btn:hover {
     background: #2ea043;
 }
 
-/* TESTE SORT */
 .sort-box {
     background: #161b22;
     padding: 20px;
@@ -146,7 +139,6 @@ header p {
     color: #58a6ff;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -165,19 +157,35 @@ footer {
 
 <div class="container">
 
+    <!-- BACKEND -->
     <section class="category">
         <h2>⚙️ Backend</h2>
         <ul class="repo-list">
             <li class="repo-item">
-                <h3>Inicio Backend</h3>
-                <p>Backend principal do sistema.</p>
-                <a href="https://github.com/lightning133/inicio-backend" target="_blank">
-                    Ver no GitHub
-                </a>
+                <h3>Arquivos do Backend</h3>
+
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/2.cliente.json" target="_blank">2.cliente.json</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/2.leitura.js" target="_blank">2.leitura.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/alterar.js" target="_blank">alterar.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/arney.js" target="_blank">arney.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/brake_continue.js" target="_blank">brake_continue.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/carro.js" target="_blank">carro.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/cklau.js" target="_blank">cklau.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/conjutonumeros.js" target="_blank">conjutonumeros.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/media_se.js" target="_blank">media_se.js</a>
+                <a href="#">notas.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/objeto.js" target="_blank">objeto.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/operacoesbasicas.js" target="_blank">operacoesbasicas.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste.html" target="_blank">teste.html</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste.js" target="_blank">teste.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste2.js" target="_blank">teste2.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste3.js" target="_blank">teste3.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank">variaveis.js</a>
             </li>
         </ul>
     </section>
 
+    <!-- FRONTEND -->
     <section class="category">
         <h2>🌐 Frontend</h2>
         <ul class="repo-list">
@@ -189,12 +197,13 @@ footer {
         </ul>
     </section>
 
+    <!-- PROJETOS -->
     <section class="category">
         <h2>🎮 Projetos Especiais</h2>
         <ul class="repo-list">
             <li class="repo-item">
                 <h3>Trocas Figurinhas</h3>
-                <p>Plataforma para troca de figurinhas de jogadores.</p>
+                <p>Plataforma para troca de figurinhas.</p>
                 <a href="https://lightning133.github.io/figu-times/" target="_blank" class="highlight-btn">
                     Acessar Projeto
                 </a>
@@ -202,7 +211,51 @@ footer {
         </ul>
     </section>
 
-    <!-- NOVA PARTE COM SELECTION SORT -->
+    <!-- MOBILE -->
+    <section class="category">
+        <h2>📱 Programação Mobile</h2>
+        <ul class="repo-list">
+
+            <li class="repo-item">
+                <h3>Troca de Foto</h3>
+                <p>Troca imagem ao clicar.</p>
+
+                <!-- 🔴 COLOQUE A IMAGEM DO QR CODE AQUI -->
+                <img src="qr-codestroca-foto.png" alt="QR Code Troca Foto" width="150">
+
+                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank">
+                    Abrir Projeto
+                </a>
+            </li>
+
+            <li class="repo-item">
+                <h3>App de Soma</h3>
+                <p>Aplicativo de soma.</p>
+
+                <!-- 🔴 COLOQUE A IMAGEM DO QR CODE AQUI -->
+                <img src="qr-codessoma.png" alt="QR Code Soma" width="150">
+
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank">
+                    Abrir Projeto
+                </a>
+            </li>
+
+            <li class="repo-item">
+                <h3>Contador</h3>
+                <p>Contador interativo.</p>
+
+                <!-- 🔴 COLOQUE A IMAGEM DO QR CODE AQUI -->
+                <img src="qr-codescontador.png" alt="QR Code Contador" width="150">
+
+                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank">
+                    Abrir Projeto
+                </a>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- SORT -->
     <section class="category">
         <h2>🧠 Teste de Ordenação (Selection Sort)</h2>
         <div class="sort-box">
@@ -219,7 +272,6 @@ footer {
 </footer>
 
 <script>
-// SELECTION SORT
 function selectionSort(arr) {
     for(let i = 0; i < arr.length; i++) {
         let min = i;
@@ -231,11 +283,9 @@ function selectionSort(arr) {
     return arr;
 }
 
-// FUNÇÃO PARA PEGAR INPUT E MOSTRAR RESULTADO
 function ordenar() {
     let input = document.getElementById("arrayInput").value;
     let array = input.split(",").map(Number);
-
     let ordenado = selectionSort(array);
 
     document.getElementById("resultado").innerText =
