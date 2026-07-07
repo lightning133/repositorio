@@ -162,6 +162,7 @@ footer {
         <ul class="repo-list">
             <li class="repo-item">
                 <h3>Arquivos do Backend</h3>
+
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/2.cliente.json" target="_blank">2.cliente.json</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/2.leitura.js" target="_blank">2.leitura.js</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/alterar.js" target="_blank">alterar.js</a>
@@ -187,9 +188,20 @@ footer {
         <h2>🌐 Frontend</h2>
         <ul class="repo-list">
             <li class="repo-item">
-                <h3>Projeto Futuro</h3>
-                <p>Espaço reservado para novos projetos.</p>
-                <a href="#">Em breve</a>
+                <h3>Reino Animal Pet Care</h3>
+                <a href="https://reino-animal-prime.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+            </li>
+            <li class="repo-item">
+                <h3>Easy Financy</h3>
+                <a href="https://easy-financy-flow.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+            </li>
+            <li class="repo-item">
+                <h3>EduPulse</h3>
+                <a href="https://interesting-edupulse-growth-hub.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+            </li>
+            <li class="repo-item">
+                <h3>Fuel Control</h3>
+                <a href="https://impetuous-fuel-control-hub.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
             </li>
         </ul>
     </section>
@@ -210,21 +222,25 @@ footer {
     <section class="category">
         <h2>📱 Programação Mobile</h2>
         <ul class="repo-list">
+
             <li class="repo-item">
                 <h3>Troca de Foto</h3>
                 <img src="qr-codestroca-foto.png" width="150">
                 <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank">Abrir Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>App de Soma</h3>
                 <img src="qr-codessoma.png" width="150">
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank">Abrir Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>Contador</h3>
                 <img src="qr-codescontador.png" width="150">
                 <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank">Abrir Projeto</a>
             </li>
+
         </ul>
     </section>
 
@@ -234,6 +250,7 @@ footer {
             <li class="repo-item">
                 <h3>Pac-Man</h3>
                 <p>Jogo clássico desenvolvido em JavaScript.</p>
+
                 <a href="https://lightning133.github.io/pan-mac/" target="_blank" class="highlight-btn">
                     Jogar Agora
                 </a>
@@ -246,4 +263,50 @@ footer {
         <ul class="repo-list">
             <li class="repo-item">
                 <h3>CodeQuest</h3>
-                <p>Acesse o aplicativo
+                <p>Acesse o aplicativo interativo do CodeQuest.</p>
+                <a href="https://code-steady-quest-play.base44.app" target="_blank" class="highlight-btn">
+                    Abrir CodeQuest
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="category">
+        <h2>🧠 Teste de Ordenação (Selection Sort)</h2>
+        <div class="sort-box">
+            <input type="text" id="arrayInput" placeholder="Ex: 5,3,8,1,2">
+            <button onclick="ordenar()">Ordenar</button>
+            <div class="result" id="resultado"></div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 - Wesley Roberto
+</footer>
+
+<script>
+function selectionSort(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        let min = i;
+        for(let j = i + 1; j < arr.length; j++) {
+            if(arr[j] < arr[min]) min = j;
+        }
+        [arr[i], arr[min]] = [arr[min], arr[i]];
+    }
+    return arr;
+}
+
+function ordenar() {
+    let input = document.getElementById("arrayInput").value;
+    let array = input.split(",").map(Number);
+    let ordenado = selectionSort(array);
+
+    document.getElementById("resultado").innerText =
+        "Resultado: " + ordenado.join(", ");
+}
+</script>
+
+</body>
+</html>
