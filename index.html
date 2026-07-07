@@ -13,25 +13,68 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #0d1117;
-    color: #e6edf3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fundo animado em gradiente */
+    background: linear-gradient(-45deg, #0d0202, #2b0404, #1a0000, #4d0a0a);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #f0f4f8;
+    overflow-x: hidden;
+}
+
+/* Animação do fundo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animação de flutuação para o título */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Animação de entrada (Fade In e deslize) */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de pulso para botões */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(204, 0, 0, 0.4); }
+    50% { box-shadow: 0 0 25px rgba(255, 77, 77, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(204, 0, 0, 0.4); }
 }
 
 header {
-    padding: 30px;
+    padding: 40px 20px;
     text-align: center;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #4a1010;
+    background: rgba(10, 2, 2, 0.6);
+    backdrop-filter: blur(5px);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    color: #58a6ff;
+    font-size: 2.8rem;
+    color: #ff4d4d;
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+    letter-spacing: 1px;
+    animation: float 4s ease-in-out infinite; /* Efeito flutuante aqui */
 }
 
 header p {
-    color: #8b949e;
-    margin-top: 8px;
+    color: #b3b3b3;
+    margin-top: 10px;
+    font-size: 1.1rem;
 }
 
 .container {
@@ -42,13 +85,26 @@ header p {
 
 .category {
     margin-bottom: 50px;
+    opacity: 0; /* Começa invisível para a animação */
+    animation: fadeInUp 1s ease-out forwards;
 }
 
+/* Atraso em cada categoria para entrarem uma de cada vez */
+.category:nth-child(1) { animation-delay: 0.2s; }
+.category:nth-child(2) { animation-delay: 0.4s; }
+.category:nth-child(3) { animation-delay: 0.6s; }
+.category:nth-child(4) { animation-delay: 0.8s; }
+.category:nth-child(5) { animation-delay: 1.0s; }
+.category:nth-child(6) { animation-delay: 1.2s; }
+.category:nth-child(7) { animation-delay: 1.4s; }
+
 .category h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
-    border-left: 5px solid #58a6ff;
-    padding-left: 10px;
+    border-left: 5px solid #ff4d4d;
+    padding-left: 15px;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 77, 77, 0.3);
 }
 
 .repo-list {
@@ -56,94 +112,153 @@ header p {
 }
 
 .repo-item {
-    background: #161b22;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: 0.3s;
-    border: 1px solid #30363d;
+    background: rgba(30, 5, 5, 0.7);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico suave */
+    border: 1px solid #4a1010;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .repo-item:hover {
-    background: #1f2937;
-    transform: translateX(5px);
+    background: rgba(50, 10, 10, 0.9);
+    transform: translateY(-8px) scale(1.02);
+    border-color: #ff4d4d;
+    box-shadow: 0 10px 25px rgba(255, 77, 77, 0.25);
 }
 
 .repo-item h3 {
-    color: #58a6ff;
-    margin-bottom: 10px;
+    color: #ff4d4d;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.repo-item:hover h3 {
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+}
+
+.repo-item p {
+    color: #cccccc;
+    margin-bottom: 15px;
 }
 
 .repo-item a {
-    display: block;
-    color: #238636;
+    display: inline-block;
+    color: #ff8080;
     text-decoration: none;
-    margin: 4px 0;
+    margin: 6px 10px 6px 0;
+    transition: 0.3s ease;
 }
 
 .repo-item a:hover {
+    color: #ffffff;
     text-decoration: underline;
+    text-shadow: 0 0 8px #ff4d4d;
+    transform: translateX(5px);
 }
 
 .repo-item img {
-    margin-top: 10px;
+    margin-top: 15px;
+    display: block;
     border-radius: 8px;
-    border: 1px solid #30363d;
+    border: 2px solid #4a1010;
+    transition: all 0.5s ease;
+}
+
+/* Nova animação ao passar o mouse nas imagens */
+.repo-item img:hover {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+    transform: scale(1.1) rotate(4deg); 
 }
 
 .highlight-btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 18px;
-    background: #238636;
-    color: white;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #cc0000;
+    color: white !important;
     border-radius: 8px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: bold;
+    animation: pulseGlow 2s infinite; /* Botão pulsante */
+    transition: all 0.3s ease;
 }
 
 .highlight-btn:hover {
-    background: #2ea043;
+    background: #ff3333;
+    animation: none; /* Para a pulsação ao passar o mouse */
+    box-shadow: 0 0 25px rgba(255, 51, 51, 0.9);
+    transform: scale(1.08) translateY(-3px);
 }
 
 .sort-box {
-    background: #161b22;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #30363d;
+    background: rgba(30, 5, 5, 0.7);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #4a1010;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.sort-box:hover {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
 }
 
 .sort-box input {
-    padding: 10px;
+    padding: 12px;
     width: 70%;
-    border-radius: 6px;
-    border: none;
+    border-radius: 8px;
+    border: 1px solid #661111;
+    background: #0a0202;
+    color: #fff;
     margin-right: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.sort-box input:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.6);
+    width: 72%;
 }
 
 .sort-box button {
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 6px;
-    background: #238636;
+    border-radius: 8px;
+    background: #cc0000;
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .sort-box button:hover {
-    background: #2ea043;
+    background: #ff3333;
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.7);
+    transform: scale(1.05) translateY(-2px);
 }
 
 .result {
-    margin-top: 15px;
-    color: #58a6ff;
+    margin-top: 20px;
+    color: #ff8080;
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid #30363d;
-    color: #8b949e;
+    padding: 25px;
+    border-top: 1px solid #4a1010;
+    color: #b3b3b3;
+    background: rgba(10, 2, 2, 0.6);
+    backdrop-filter: blur(5px);
 }
 </style>
 </head>
@@ -162,7 +277,6 @@ footer {
         <ul class="repo-list">
             <li class="repo-item">
                 <h3>Arquivos do Backend</h3>
-
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/2.cliente.json" target="_blank">2.cliente.json</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/2.leitura.js" target="_blank">2.leitura.js</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/alterar.js" target="_blank">alterar.js</a>
@@ -225,20 +339,20 @@ footer {
 
             <li class="repo-item">
                 <h3>Troca de Foto</h3>
-                <img src="qr-codestroca-foto.png" width="150">
-                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank">Abrir Projeto</a>
+                <img src="qr-codestroca-foto.png" width="150" alt="QR Code Troca de Foto">
+                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank" class="highlight-btn">Abrir Projeto</a>
             </li>
 
             <li class="repo-item">
                 <h3>App de Soma</h3>
-                <img src="qr-codessoma.png" width="150">
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank">Abrir Projeto</a>
+                <img src="qr-codessoma.png" width="150" alt="QR Code App de Soma">
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank" class="highlight-btn">Abrir Projeto</a>
             </li>
 
             <li class="repo-item">
                 <h3>Contador</h3>
-                <img src="qr-codescontador.png" width="150">
-                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank">Abrir Projeto</a>
+                <img src="qr-codescontador.png" width="150" alt="QR Code Contador">
+                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank" class="highlight-btn">Abrir Projeto</a>
             </li>
 
         </ul>
@@ -250,7 +364,6 @@ footer {
             <li class="repo-item">
                 <h3>Pac-Man</h3>
                 <p>Jogo clássico desenvolvido em JavaScript.</p>
-
                 <a href="https://lightning133.github.io/pan-mac/" target="_blank" class="highlight-btn">
                     Jogar Agora
                 </a>
@@ -303,8 +416,14 @@ function ordenar() {
     let array = input.split(",").map(Number);
     let ordenado = selectionSort(array);
 
-    document.getElementById("resultado").innerText =
-        "Resultado: " + ordenado.join(", ");
+    let divResultado = document.getElementById("resultado");
+    divResultado.innerText = "Resultado: " + ordenado.join(", ");
+    
+    // Pequena animação no JavaScript para o resultado aparecer suavemente
+    divResultado.style.opacity = "0";
+    setTimeout(() => {
+        divResultado.style.opacity = "1";
+    }, 100);
 }
 </script>
 
