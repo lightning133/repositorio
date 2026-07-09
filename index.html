@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Repositório Wesley</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700;900&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+
 <style>
 * {
     margin: 0;
@@ -12,253 +16,359 @@
     box-sizing: border-box;
 }
 
+/* Barra de rolagem Fúria Espartana */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0000;
+}
+::-webkit-scrollbar-thumb {
+    background: #660000;
+    border-radius: 10px;
+    border: 1px solid #ff0000;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff1a1a;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Fundo animado em gradiente */
-    background: linear-gradient(-45deg, #0d0202, #2b0404, #1a0000, #4d0a0a);
-    background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite;
-    color: #f0f4f8;
+    font-family: 'Poppins', sans-serif;
+    /* Fundo de GIF de Fogo/Chamas Infinitas */
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjM4bjdrcW9lZ3Nyc3d2MXBhaGt0YnU4cGFvbzdjc3F1eHA1Nzh6byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKuwdREX41iSgAU/giphy.gif');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #e2e8f0;
     overflow-x: hidden;
+    position: relative;
+    
+    /* Cursor Customizado do Usuário */
+    cursor: url('https://vocational-lime-o7qrjidv.edgeone.dev/1573510fb2c586a8d310ffd13162135f-removebg-preview.png') 16 16, auto;
 }
 
-/* Animação do fundo */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Garante que links e botões também usem o cursor customizado */
+a, button, input[type="button"], input[type="submit"] {
+    cursor: url('https://vocational-lime-o7qrjidv.edgeone.dev/1573510fb2c586a8d310ffd13162135f-removebg-preview.png') 16 16, pointer !important;
 }
 
-/* Animação de flutuação para o título */
-@keyframes float {
+/* Overlay escuro para o GIF de fundo não atrapalhar a leitura do texto */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 0, 0, 0.65);
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes floatWeapon {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-6px); }
     100% { transform: translateY(0px); }
 }
 
-/* Animação de entrada (Fade In e deslize) */
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Animação de pulso para botões */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 10px rgba(204, 0, 0, 0.4); }
-    50% { box-shadow: 0 0 25px rgba(255, 77, 77, 0.8); }
-    100% { box-shadow: 0 0 10px rgba(204, 0, 0, 0.4); }
+/* Pulsação Vermelha Brilhante */
+@keyframes rageGlow {
+    0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(255, 26, 26, 0.9); }
+    100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
 }
 
 header {
-    padding: 40px 20px;
+    padding: 60px 20px 40px;
     text-align: center;
-    border-bottom: 1px solid #4a1010;
-    background: rgba(10, 2, 2, 0.6);
-    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.4);
+    background: rgba(10, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 header h1 {
-    font-size: 2.8rem;
-    color: #ff4d4d;
-    text-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
-    letter-spacing: 1px;
-    animation: float 4s ease-in-out infinite; /* Efeito flutuante aqui */
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 10px rgba(255, 51, 51, 0.8), 2px 2px 4px #000;
+    letter-spacing: 2px;
+    animation: floatWeapon 4s ease-in-out infinite;
+    text-transform: uppercase;
 }
 
 header p {
-    color: #b3b3b3;
-    margin-top: 10px;
-    font-size: 1.1rem;
+    color: #ff9999;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .category {
-    margin-bottom: 50px;
-    opacity: 0; /* Começa invisível para a animação */
-    animation: fadeInUp 1s ease-out forwards;
+    margin-bottom: 70px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Atraso em cada categoria para entrarem uma de cada vez */
-.category:nth-child(1) { animation-delay: 0.2s; }
-.category:nth-child(2) { animation-delay: 0.4s; }
-.category:nth-child(3) { animation-delay: 0.6s; }
-.category:nth-child(4) { animation-delay: 0.8s; }
-.category:nth-child(5) { animation-delay: 1.0s; }
-.category:nth-child(6) { animation-delay: 1.2s; }
-.category:nth-child(7) { animation-delay: 1.4s; }
+.category:nth-child(1) { animation-delay: 0.1s; }
+.category:nth-child(2) { animation-delay: 0.3s; }
+.category:nth-child(3) { animation-delay: 0.5s; }
+.category:nth-child(4) { animation-delay: 0.7s; }
+.category:nth-child(5) { animation-delay: 0.9s; }
 
 .category h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-left: 5px solid #ff4d4d;
-    padding-left: 15px;
-    color: #fff;
-    text-shadow: 0 0 8px rgba(255, 77, 77, 0.3);
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    display: inline-block;
+    border-bottom: 3px solid #ff0000;
+    padding-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    letter-spacing: 1.5px;
 }
 
 .repo-list {
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
+/* Cards em pedra escura com aura vermelha brilhante */
 .repo-item {
-    background: rgba(30, 5, 5, 0.7);
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico suave */
-    border: 1px solid #4a1010;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: rgba(15, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 77, 77, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
 }
 
 .repo-item:hover {
-    background: rgba(50, 10, 10, 0.9);
-    transform: translateY(-8px) scale(1.02);
-    border-color: #ff4d4d;
-    box-shadow: 0 10px 25px rgba(255, 77, 77, 0.25);
+    background: rgba(30, 0, 0, 0.95);
+    transform: translateY(-8px);
+    border-color: #ff1a1a;
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.5);
 }
 
 .repo-item h3 {
-    color: #ff4d4d;
+    font-family: 'Cinzel', serif;
+    color: #ff3333;
     margin-bottom: 12px;
-    font-size: 1.3rem;
-    transition: 0.3s;
-}
-
-.repo-item:hover h3 {
-    text-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 .repo-item p {
-    color: #cccccc;
-    margin-bottom: 15px;
+    color: #e2e8f0;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
-.repo-item a {
-    display: inline-block;
-    color: #ff8080;
+.backend-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.backend-links a {
+    background: rgba(255, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #ff6666;
     text-decoration: none;
-    margin: 6px 10px 6px 0;
-    transition: 0.3s ease;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
-.repo-item a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-    text-shadow: 0 0 8px #ff4d4d;
-    transform: translateX(5px);
+.backend-links a:hover {
+    background: #990000;
+    color: #fff;
+    border-color: #ff1a1a;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    transform: translateY(-2px);
 }
 
 .repo-item img {
-    margin-top: 15px;
+    margin: 15px 0;
     display: block;
     border-radius: 8px;
-    border: 2px solid #4a1010;
+    border: 2px solid rgba(255, 0, 0, 0.3);
     transition: all 0.5s ease;
+    align-self: center;
 }
 
-/* Nova animação ao passar o mouse nas imagens */
 .repo-item img:hover {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
-    transform: scale(1.1) rotate(4deg); 
+    border-color: #ff1a1a;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    transform: scale(1.05); 
 }
 
+/* Moldura Brilhante para os GIFs */
+.kratos-gif-container {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto 35px auto;
+    border-radius: 8px;
+    border: 2px solid #ff1a1a;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+/* Botões Vermelhos Brilhantes */
 .highlight-btn {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #cc0000;
-    color: white !important;
-    border-radius: 8px;
+    margin-top: auto;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #800000, #cc0000);
+    color: #fff !important;
+    border-radius: 4px;
     text-decoration: none !important;
-    font-weight: bold;
-    animation: pulseGlow 2s infinite; /* Botão pulsante */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    animation: rageGlow 2.5s infinite;
     transition: all 0.3s ease;
+    border: 1px solid #ff3333;
+    text-align: center;
+    font-family: 'Cinzel', serif;
 }
 
 .highlight-btn:hover {
-    background: #ff3333;
-    animation: none; /* Para a pulsação ao passar o mouse */
-    box-shadow: 0 0 25px rgba(255, 51, 51, 0.9);
-    transform: scale(1.08) translateY(-3px);
+    background: linear-gradient(45deg, #cc0000, #ff1a1a);
+    animation: none;
+    box-shadow: 0 0 35px rgba(255, 0, 0, 1);
+    transform: scale(1.05) translateY(-2px);
+    color: #ffffff !important;
 }
 
 .sort-box {
-    background: rgba(30, 5, 5, 0.7);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #4a1010;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: 0.3s;
-}
-
-.sort-box:hover {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+    background: rgba(15, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
 }
 
 .sort-box input {
-    padding: 12px;
-    width: 70%;
-    border-radius: 8px;
-    border: 1px solid #661111;
-    background: #0a0202;
+    flex-grow: 1;
+    padding: 14px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
-    margin-right: 10px;
+    font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
 }
 
 .sort-box input:focus {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.6);
-    width: 72%;
+    border-color: #ff1a1a;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
 
 .sort-box button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background: #cc0000;
+    padding: 14px 28px;
+    border: 1px solid #ff3333;
+    border-radius: 4px;
+    background: linear-gradient(45deg, #800000, #cc0000);
     color: white;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
     transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
 .sort-box button:hover {
-    background: #ff3333;
-    box-shadow: 0 0 20px rgba(255, 51, 51, 0.7);
-    transform: scale(1.05) translateY(-2px);
+    background: linear-gradient(45deg, #cc0000, #ff1a1a);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+    transform: translateY(-2px);
 }
 
 .result {
-    margin-top: 20px;
-    color: #ff8080;
-    font-weight: bold;
-    font-size: 1.1rem;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    width: 100%;
+    margin-top: 15px;
+    color: #ff4d4d;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    background: rgba(255, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #ff1a1a;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    display: none;
 }
 
 footer {
     text-align: center;
-    padding: 25px;
-    border-top: 1px solid #4a1010;
-    color: #b3b3b3;
-    background: rgba(10, 2, 2, 0.6);
+    padding: 40px;
+    border-top: 1px solid rgba(255, 0, 0, 0.4);
+    color: #ff9999;
+    background: rgba(10, 0, 0, 0.95);
     backdrop-filter: blur(5px);
+    font-size: 0.9rem;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* Estilos da Animação do Clique de Fogo */
+.click-spark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff6666, #ff0000, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 15px #ff0000, 0 0 30px #ff3333;
+    transform: translate(-50%, -50%) scale(0);
+    animation: sparkExplosion 0.4s ease-out forwards;
+}
+
+@keyframes sparkExplosion {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; filter: blur(2px); }
 }
 </style>
 </head>
@@ -266,17 +376,22 @@ footer {
 <body>
 
 <header>
-    <h1>📦 Repositório Wesley</h1>
-    <p>Catálogo oficial dos meus projetos</p>
+    <h1>Repositório Wesley</h1>
+    <p>A Fúria do Código & Relíquias de Esparta</p>
+    
+    <div class="kratos-gif-container" style="max-width: 450px; margin-top: 30px; margin-bottom: 0;">
+        <div class="tenor-gif-embed" data-postid="59639254598272033" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-gif-59639254598272033">Kratos GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+    </div>
 </header>
 
 <div class="container">
 
     <section class="category">
-        <h2>⚙️ Backend</h2>
-        <ul class="repo-list">
-            <li class="repo-item">
-                <h3>Arquivos do Backend</h3>
+        <h2>⚙️ Forja do Backend</h2>
+        <div class="repo-item" style="grid-column: 1 / -1;">
+            <h3>Arquivos do Backend</h3>
+            <p>Selecione um dos antigos pergaminhos abaixo para inspecionar seu código-fonte.</p>
+            <div class="backend-links">
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/2.cliente.json" target="_blank">2.cliente.json</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/2.leitura.js" target="_blank">2.leitura.js</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/alterar.js" target="_blank">alterar.js</a>
@@ -294,101 +409,99 @@ footer {
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/teste2.js" target="_blank">teste2.js</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/teste3.js" target="_blank">teste3.js</a>
                 <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank">variaveis.js</a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <section class="category">
-        <h2>🌐 Frontend</h2>
+        <div class="kratos-gif-container">
+            <div class="tenor-gif-embed" data-postid="11577634319137475718" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-standing-aura-lightning-god-of-war-gif-11577634319137475718">Kratos Standing Aura GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+        </div>
+
+        <h2>🌐 Reinos do Frontend</h2>
         <ul class="repo-list">
             <li class="repo-item">
                 <h3>Reino Animal Pet Care</h3>
+                <p>Plataforma dedicada ao cuidado e bem-estar de criaturas e companheiros.</p>
                 <a href="https://reino-animal-prime.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
             </li>
             <li class="repo-item">
                 <h3>Easy Financy</h3>
+                <p>Sistema moderno para gestão e controle do seu tesouro de forma simplificada.</p>
                 <a href="https://easy-financy-flow.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
             </li>
             <li class="repo-item">
                 <h3>EduPulse</h3>
+                <p>Hub educacional para acompanhamento e engajamento da sabedoria.</p>
                 <a href="https://interesting-edupulse-growth-hub.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
             </li>
             <li class="repo-item">
                 <h3>Fuel Control</h3>
+                <p>Aplicativo voltado para o controle eficiente e estratégico de recursos.</p>
                 <a href="https://impetuous-fuel-control-hub.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
             </li>
         </ul>
     </section>
 
     <section class="category">
-        <h2>🎮 Projetos Especiais</h2>
+        <div class="kratos-gif-container">
+            <div class="tenor-gif-embed" data-postid="4765679871088702564" data-share-method="host" data-aspect-ratio="2.25758" data-width="100%"><a href="https://tenor.com/view/bow-kratos-gif-4765679871088702564">Bow Kratos GIF</a>from <a href="https://tenor.com/search/bow-gifs">Bow GIFs</a></div>
+        </div>
+
+        <h2>🎮 Desafios & Artefatos</h2>
         <ul class="repo-list">
             <li class="repo-item">
                 <h3>Trocas Figurinhas</h3>
-                <p>Plataforma para troca de figurinhas.</p>
-                <a href="https://lightning133.github.io/figu-times/" target="_blank" class="highlight-btn">
-                    Acessar Projeto
-                </a>
+                <p>Plataforma interativa para organizar e realizar a troca de artefatos e figurinhas.</p>
+                <a href="https://lightning133.github.io/figu-times/" target="_blank" class="highlight-btn">Acessar Projeto</a>
+            </li>
+            <li class="repo-item">
+                <h3>Pac-Man</h3>
+                <p>Recriação de um clássico antigo totalmente desenvolvido nos feitiços do JavaScript.</p>
+                <a href="https://lightning133.github.io/pan-mac/" target="_blank" class="highlight-btn">Jogar Agora</a>
+            </li>
+            <li class="repo-item">
+                <h3>CodeQuest</h3>
+                <p>Aplicativo gamificado focado em provações e aprendizado de novos códigos.</p>
+                <a href="https://code-steady-quest-play.base44.app" target="_blank" class="highlight-btn">Iniciar Jornada</a>
             </li>
         </ul>
     </section>
 
     <section class="category">
-        <h2>📱 Programação Mobile</h2>
-        <ul class="repo-list">
+        <div class="kratos-gif-container">
+            <div class="tenor-gif-embed" data-postid="27294566" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-gif-27294566">Kratos GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+        </div>
 
+        <h2>📱 Runas Mobile</h2>
+        <ul class="repo-list">
             <li class="repo-item">
                 <h3>Troca de Foto</h3>
                 <img src="qr-codestroca-foto.png" width="150" alt="QR Code Troca de Foto">
-                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank" class="highlight-btn">Abrir Projeto</a>
+                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank" class="highlight-btn">Revelar Runa</a>
             </li>
-
             <li class="repo-item">
                 <h3>App de Soma</h3>
                 <img src="qr-codessoma.png" width="150" alt="QR Code App de Soma">
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank" class="highlight-btn">Abrir Projeto</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank" class="highlight-btn">Revelar Runa</a>
             </li>
-
             <li class="repo-item">
                 <h3>Contador</h3>
                 <img src="qr-codescontador.png" width="150" alt="QR Code Contador">
-                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank" class="highlight-btn">Abrir Projeto</a>
-            </li>
-
-        </ul>
-    </section>
-
-    <section class="category">
-        <h2>🕹️ Jogos</h2>
-        <ul class="repo-list">
-            <li class="repo-item">
-                <h3>Pac-Man</h3>
-                <p>Jogo clássico desenvolvido em JavaScript.</p>
-                <a href="https://lightning133.github.io/pan-mac/" target="_blank" class="highlight-btn">
-                    Jogar Agora
-                </a>
+                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank" class="highlight-btn">Revelar Runa</a>
             </li>
         </ul>
     </section>
 
     <section class="category">
-        <h2>🚀 Desafios & Aprendizado</h2>
-        <ul class="repo-list">
-            <li class="repo-item">
-                <h3>CodeQuest</h3>
-                <p>Acesse o aplicativo interativo do CodeQuest.</p>
-                <a href="https://code-steady-quest-play.base44.app" target="_blank" class="highlight-btn">
-                    Abrir CodeQuest
-                </a>
-            </li>
-        </ul>
-    </section>
+        <div class="kratos-gif-container">
+            <div class="tenor-gif-embed" data-postid="281736945232554244" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-gif-281736945232554244">Kratos GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+        </div>
 
-    <section class="category">
-        <h2>🧠 Teste de Ordenação (Selection Sort)</h2>
+        <h2>🧠 Provação de Ordenação (Selection Sort)</h2>
         <div class="sort-box">
-            <input type="text" id="arrayInput" placeholder="Ex: 5,3,8,1,2">
-            <button onclick="ordenar()">Ordenar</button>
+            <input type="text" id="arrayInput" placeholder="Digite as runas numéricas (Ex: 5, 3, 8, 1, 2)">
+            <button onclick="ordenar()">Ordenar Runas</button>
             <div class="result" id="resultado"></div>
         </div>
     </section>
@@ -396,7 +509,7 @@ footer {
 </div>
 
 <footer>
-    © 2026 - Wesley Roberto
+    © 2026 - Wesley Roberto - Sobrevivente de Esparta
 </footer>
 
 <script>
@@ -413,19 +526,42 @@ function selectionSort(arr) {
 
 function ordenar() {
     let input = document.getElementById("arrayInput").value;
-    let array = input.split(",").map(Number);
+    if(!input.trim()) return; 
+    
+    let array = input.split(",").map(item => Number(item.trim()));
     let ordenado = selectionSort(array);
 
     let divResultado = document.getElementById("resultado");
-    divResultado.innerText = "Resultado: " + ordenado.join(", ");
+    divResultado.innerText = "Desfecho: " + ordenado.join(" ➔ ");
     
-    // Pequena animação no JavaScript para o resultado aparecer suavemente
-    divResultado.style.opacity = "0";
-    setTimeout(() => {
-        divResultado.style.opacity = "1";
-    }, 100);
+    divResultado.style.display = "block";
+    divResultado.animate([
+        { opacity: 0, transform: 'translateY(-10px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+    ], { duration: 400, fill: 'forwards' });
 }
+
+/* Lógica da Animação ao Clicar (Faíscas Flamejantes) */
+document.addEventListener('click', function(e) {
+    // Cria o elemento da faísca
+    const spark = document.createElement('div');
+    spark.classList.add('click-spark');
+    
+    // Define a posição exata do clique
+    spark.style.left = e.pageX + 'px';
+    spark.style.top = e.pageY + 'px';
+    
+    // Adiciona ao corpo da página
+    document.body.appendChild(spark);
+    
+    // Remove o elemento após o término da animação para não pesar a página
+    setTimeout(() => {
+        spark.remove();
+    }, 400);
+});
 </script>
+
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 </body>
 </html>
