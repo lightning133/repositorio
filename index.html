@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700;900&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -34,7 +35,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* Fundo de GIF de Fogo/Chamas Infinitas */
     background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjM4bjdrcW9lZ3Nyc3d2MXBhaGt0YnU4cGFvbzdjc3F1eHA1Nzh6byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKuwdREX41iSgAU/giphy.gif');
     background-size: cover;
     background-attachment: fixed;
@@ -42,17 +42,13 @@ body {
     color: #e2e8f0;
     overflow-x: hidden;
     position: relative;
-    
-    /* Cursor Customizado do Usuário */
     cursor: url('https://vocational-lime-o7qrjidv.edgeone.dev/1573510fb2c586a8d310ffd13162135f-removebg-preview.png') 16 16, auto;
 }
 
-/* Garante que links e botões também usem o cursor customizado */
 a, button, input[type="button"], input[type="submit"] {
     cursor: url('https://vocational-lime-o7qrjidv.edgeone.dev/1573510fb2c586a8d310ffd13162135f-removebg-preview.png') 16 16, pointer !important;
 }
 
-/* Overlay escuro para o GIF de fundo não atrapalhar a leitura do texto */
 body::before {
     content: '';
     position: fixed;
@@ -76,7 +72,6 @@ body::before {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Pulsação Vermelha Brilhante */
 @keyframes rageGlow {
     0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
     50% { box-shadow: 0 0 30px rgba(255, 26, 26, 0.9); }
@@ -149,7 +144,6 @@ header p {
     gap: 25px;
 }
 
-/* Cards em pedra escura com aura vermelha brilhante */
 .repo-item {
     background: rgba(15, 0, 0, 0.85);
     backdrop-filter: blur(10px);
@@ -231,10 +225,9 @@ header p {
 .repo-item img:hover {
     border-color: #ff1a1a;
     box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
-/* Moldura Brilhante para os GIFs */
 .kratos-gif-container {
     width: 100%;
     max-width: 550px;
@@ -247,7 +240,6 @@ header p {
     z-index: 2;
 }
 
-/* Botões Vermelhos Brilhantes */
 .highlight-btn {
     display: inline-block;
     margin-top: auto;
@@ -352,7 +344,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Estilos da Animação do Clique de Fogo */
 .click-spark {
     position: absolute;
     width: 20px;
@@ -370,6 +361,46 @@ footer {
     0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
     100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; filter: blur(2px); }
 }
+
+/* Responsividade */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .category h2 {
+        font-size: 1.6rem;
+    }
+
+    .repo-item {
+        padding: 22px;
+    }
+
+    .highlight-btn {
+        width: 100%;
+    }
+
+    .sort-box {
+        padding: 20px;
+    }
+
+    .sort-box button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 </style>
 </head>
 
@@ -378,9 +409,12 @@ footer {
 <header>
     <h1>Repositório Wesley</h1>
     <p>A Fúria do Código & Relíquias de Esparta</p>
-    
+
     <div class="kratos-gif-container" style="max-width: 450px; margin-top: 30px; margin-bottom: 0;">
-        <div class="tenor-gif-embed" data-postid="59639254598272033" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-gif-59639254598272033">Kratos GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+        <div class="tenor-gif-embed" data-postid="59639254598272033" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
+            <a href="https://tenor.com/view/kratos-gif-59639254598272033">Kratos GIF</a>
+            from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a>
+        </div>
     </div>
 </header>
 
@@ -392,80 +426,109 @@ footer {
             <h3>Arquivos do Backend</h3>
             <p>Selecione um dos antigos pergaminhos abaixo para inspecionar seu código-fonte.</p>
             <div class="backend-links">
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/2.cliente.json" target="_blank">2.cliente.json</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/2.leitura.js" target="_blank">2.leitura.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/alterar.js" target="_blank">alterar.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/arney.js" target="_blank">arney.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/brake_continue.js" target="_blank">brake_continue.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/carro.js" target="_blank">carro.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/cklau.js" target="_blank">cklau.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/conjutonumeros.js" target="_blank">conjutonumeros.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/media_se.js" target="_blank">media_se.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/2.cliente.json" target="_blank" rel="noopener noreferrer">2.cliente.json</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/2.leitura.js" target="_blank" rel="noopener noreferrer">2.leitura.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/alterar.js" target="_blank" rel="noopener noreferrer">alterar.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/arney.js" target="_blank" rel="noopener noreferrer">arney.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/brake_continue.js" target="_blank" rel="noopener noreferrer">brake_continue.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/carro.js" target="_blank" rel="noopener noreferrer">carro.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/cklau.js" target="_blank" rel="noopener noreferrer">cklau.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/conjutonumeros.js" target="_blank" rel="noopener noreferrer">conjutonumeros.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/media_se.js" target="_blank" rel="noopener noreferrer">media_se.js</a>
                 <a href="#">notas.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/objeto.js" target="_blank">objeto.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/operacoesbasicas.js" target="_blank">operacoesbasicas.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste.html" target="_blank">teste.html</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste.js" target="_blank">teste.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste2.js" target="_blank">teste2.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste3.js" target="_blank">teste3.js</a>
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank">variaveis.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/objeto.js" target="_blank" rel="noopener noreferrer">objeto.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/operacoesbasicas.js" target="_blank" rel="noopener noreferrer">operacoesbasicas.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste.html" target="_blank" rel="noopener noreferrer">teste.html</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste.js" target="_blank" rel="noopener noreferrer">teste.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste2.js" target="_blank" rel="noopener noreferrer">teste2.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/teste3.js" target="_blank" rel="noopener noreferrer">teste3.js</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank" rel="noopener noreferrer">variaveis.js</a>
             </div>
         </div>
     </section>
 
     <section class="category">
         <div class="kratos-gif-container">
-            <div class="tenor-gif-embed" data-postid="11577634319137475718" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-standing-aura-lightning-god-of-war-gif-11577634319137475718">Kratos Standing Aura GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+            <div class="tenor-gif-embed" data-postid="11577634319137475718" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
+                <a href="https://tenor.com/view/kratos-standing-aura-lightning-god-of-war-gif-11577634319137475718">Kratos Standing Aura GIF</a>
+                from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a>
+            </div>
         </div>
 
         <h2>🌐 Reinos do Frontend</h2>
         <ul class="repo-list">
+
             <li class="repo-item">
                 <h3>Atalho de Teclas</h3>
                 <p>Guia interativo e rápido para dominar as combinações e atalhos de teclado essenciais.</p>
-                <a href="https://atalho-de-teclas.vercel.app/" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://atalho-de-teclas.vercel.app/" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>Academia de IA</h3>
                 <p>Academia de inteligência artificial forjada para expandir seus domínios e conhecimentos digitais.</p>
-                <a href="https://ai.studio/apps/8cac7c90-ddfd-44ec-8689-d73fac9df83b" target="_blank" class="highlight-btn">Acessar Artefato</a>
+                <a href="https://ai.studio/apps/8cac7c90-ddfd-44ec-8689-d73fac9df83b" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Artefato</a>
             </li>
+
             <li class="repo-item">
                 <h3>Locadora 2026</h3>
                 <p>Sistema imersivo desenvolvido para a locação de artefatos moveis épicos.</p>
-                <a href="https://lightning133.github.io/locadora2026/" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://lightning133.github.io/locadora2026/" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>Reino Animal Pet Care</h3>
                 <p>Plataforma dedicada ao cuidado e bem-estar de criaturas e companheiros.</p>
-                <a href="https://reino-animal-prime.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://reino-animal-prime.base44.app" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>Easy Financy</h3>
                 <p>Sistema moderno para gestão e controle do seu tesouro de forma simplificada.</p>
-                <a href="https://easy-financy-flow.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://easy-financy-flow.base44.app" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>EduPulse</h3>
                 <p>Hub educacional para acompanhamento e engajamento da sabedoria.</p>
-                <a href="https://interesting-edupulse-growth-hub.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://interesting-edupulse-growth-hub.base44.app" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>Fuel Control</h3>
                 <p>Aplicativo voltado para o controle eficiente e estratégico de recursos.</p>
-                <a href="https://impetuous-fuel-control-hub.base44.app" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://impetuous-fuel-control-hub.base44.app" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
             <li class="repo-item">
                 <h3>Conselho360</h3>
                 <p>Plataforma de gestão e conselho forjada para reunir e organizar informações de forma estratégica.</p>
-                <a href="https://conselho360-git-main-wesleyrozzi-8862s-projects.vercel.app/#/login" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://conselho360-git-main-wesleyrozzi-8862s-projects.vercel.app/#/login" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
+
+            <!-- NOVO PROJETO: BIBLIOTECA DIGITAL -->
+            <li class="repo-item">
+                <h3>📚 Biblioteca Digital</h3>
+                <p>Plataforma digital para gerenciamento, organização e consulta de livros, proporcionando uma experiência moderna de acesso ao conhecimento.</p>
+                <a href="https://rapid-biblio-flow-hub.base44.app" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Biblioteca</a>
+            </li>
+
+            <!-- NOVO PROJETO: FEIRA DA LUA -->
+            <li class="repo-item">
+                <h3>🌙 Feira da Lua</h3>
+                <p>Plataforma digital dedicada à Feira da Lua, reunindo informações e funcionalidades para facilitar a organização e o acesso aos serviços da feira.</p>
+                <a href="https://ai.studio/apps/6287c6ec-be3b-4e55-a13a-cfd944904add" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Feira da Lua</a>
+            </li>
+
         </ul>
     </section>
 
     <section class="category">
         <div class="kratos-gif-container">
-            <div class="tenor-gif-embed" data-postid="4765679871088702564" data-share-method="host" data-aspect-ratio="2.25758" data-width="100%"><a href="https://tenor.com/view/bow-kratos-gif-4765679871088702564">Bow Kratos GIF</a>from <a href="https://tenor.com/search/bow-gifs">Bow GIFs</a></div>
+            <div class="tenor-gif-embed" data-postid="4765679871088702564" data-share-method="host" data-aspect-ratio="2.25758" data-width="100%">
+                <a href="https://tenor.com/view/bow-kratos-gif-4765679871088702564">Bow Kratos GIF</a>
+                from <a href="https://tenor.com/search/bow-gifs">Bow GIFs</a>
+            </div>
         </div>
 
         <h2>🎮 Desafios & Artefatos</h2>
@@ -473,24 +536,27 @@ footer {
             <li class="repo-item">
                 <h3>Trocas Figurinhas</h3>
                 <p>Plataforma interativa para organizar e realizar a troca de artefatos e figurinhas.</p>
-                <a href="https://lightning133.github.io/figu-times/" target="_blank" class="highlight-btn">Acessar Projeto</a>
+                <a href="https://lightning133.github.io/figu-times/" target="_blank" rel="noopener noreferrer" class="highlight-btn">Acessar Projeto</a>
             </li>
             <li class="repo-item">
                 <h3>Pac-Man</h3>
                 <p>Recriação de um clássico antigo totalmente desenvolvido nos feitiços do JavaScript.</p>
-                <a href="https://lightning133.github.io/pan-mac/" target="_blank" class="highlight-btn">Jogar Agora</a>
+                <a href="https://lightning133.github.io/pan-mac/" target="_blank" rel="noopener noreferrer" class="highlight-btn">Jogar Agora</a>
             </li>
             <li class="repo-item">
                 <h3>CodeQuest</h3>
                 <p>Aplicativo gamificado focado em provações e aprendizado de novos códigos.</p>
-                <a href="https://code-steady-quest-play.base44.app" target="_blank" class="highlight-btn">Iniciar Jornada</a>
+                <a href="https://code-steady-quest-play.base44.app" target="_blank" rel="noopener noreferrer" class="highlight-btn">Iniciar Jornada</a>
             </li>
         </ul>
     </section>
 
     <section class="category">
         <div class="kratos-gif-container">
-            <div class="tenor-gif-embed" data-postid="27294566" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-gif-27294566">Kratos GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+            <div class="tenor-gif-embed" data-postid="27294566" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
+                <a href="https://tenor.com/view/kratos-gif-27294566">Kratos GIF</a>
+                from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a>
+            </div>
         </div>
 
         <h2>📱 Runas Mobile</h2>
@@ -498,24 +564,27 @@ footer {
             <li class="repo-item">
                 <h3>Troca de Foto</h3>
                 <img src="qr-codestroca-foto.png" width="150" alt="QR Code Troca de Foto">
-                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank" class="highlight-btn">Revelar Runa</a>
+                <a href="https://github.com/lightning133/troca-foto/blob/main/clicar%20troca%20foto.png" target="_blank" rel="noopener noreferrer" class="highlight-btn">Revelar Runa</a>
             </li>
             <li class="repo-item">
                 <h3>App de Soma</h3>
                 <img src="qr-codessoma.png" width="150" alt="QR Code App de Soma">
-                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank" class="highlight-btn">Revelar Runa</a>
+                <a href="https://github.com/lightning133/inicio-backend/blob/main/variaveis.js" target="_blank" rel="noopener noreferrer" class="highlight-btn">Revelar Runa</a>
             </li>
             <li class="repo-item">
                 <h3>Contador</h3>
                 <img src="qr-codescontador.png" width="150" alt="QR Code Contador">
-                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank" class="highlight-btn">Revelar Runa</a>
+                <a href="https://github.com/lightning133/contador/blob/main/robson.png" target="_blank" rel="noopener noreferrer" class="highlight-btn">Revelar Runa</a>
             </li>
         </ul>
     </section>
 
     <section class="category">
         <div class="kratos-gif-container">
-            <div class="tenor-gif-embed" data-postid="281736945232554244" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/kratos-gif-281736945232554244">Kratos GIF</a>from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a></div>
+            <div class="tenor-gif-embed" data-postid="281736945232554244" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
+                <a href="https://tenor.com/view/kratos-gif-281736945232554244">Kratos GIF</a>
+                from <a href="https://tenor.com/search/kratos-gifs">Kratos GIFs</a>
+            </div>
         </div>
 
         <h2>🧠 Provação de Ordenação (Selection Sort)</h2>
@@ -545,16 +614,27 @@ function selectionSort(arr) {
 }
 
 function ordenar() {
-    let input = document.getElementById("arrayInput").value;
-    if(!input.trim()) return; 
-    
-    let array = input.split(",").map(item => Number(item.trim()));
-    let ordenado = selectionSort(array);
+    const input = document.getElementById("arrayInput").value.trim();
 
-    let divResultado = document.getElementById("resultado");
+    if (!input) {
+        return;
+    }
+
+    const array = input.split(",").map(item => Number(item.trim()));
+
+    if (array.some(numero => !Number.isFinite(numero))) {
+        const resultado = document.getElementById("resultado");
+        resultado.innerText = "Digite apenas números separados por vírgula.";
+        resultado.style.display = "block";
+        return;
+    }
+
+    const ordenado = selectionSort(array);
+
+    const divResultado = document.getElementById("resultado");
     divResultado.innerText = "Desfecho: " + ordenado.join(" ➔ ");
-    
     divResultado.style.display = "block";
+
     divResultado.animate([
         { opacity: 0, transform: 'translateY(-10px)' },
         { opacity: 1, transform: 'translateY(0)' }
@@ -563,18 +643,14 @@ function ordenar() {
 
 /* Lógica da Animação ao Clicar (Faíscas Flamejantes) */
 document.addEventListener('click', function(e) {
-    // Cria o elemento da faísca
     const spark = document.createElement('div');
     spark.classList.add('click-spark');
-    
-    // Define a posição exata do clique
+
     spark.style.left = e.pageX + 'px';
     spark.style.top = e.pageY + 'px';
-    
-    // Adiciona ao corpo da página
+
     document.body.appendChild(spark);
-    
-    // Remove o elemento após o término da animação para não pesar a página
+
     setTimeout(() => {
         spark.remove();
     }, 400);
